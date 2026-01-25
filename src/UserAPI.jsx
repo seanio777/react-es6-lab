@@ -8,6 +8,10 @@ function UserAPI() {
       const res = await fetch('https://jsonplaceholder.typicode.com/users');
       const data = await res.json();
       setUsers(data);
+
+      // ES6+ Table Log for Arrays/Objects
+      console.log("API Data Fetched Successfully:");
+      console.table(data); 
     }
     fetchUsers();
   }, []);

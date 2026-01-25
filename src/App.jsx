@@ -7,6 +7,9 @@ function App() {
   const users = ['Alice', 'Bob', 'Charlie'];
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  // ES6+ Template Literal Log
+  console.log(`[App] Login Status: ${isLoggedIn ? 'LOGGED IN' : 'LOGGED OUT'}`);
+
   return (
     <div className="app-container">
       <h1>Lab Activity 3</h1>
