@@ -5,22 +5,20 @@ function UserAPI() {
 
   useEffect(() => {
     async function fetchUsers() {
-      try {
-        const res = await fetch('https://jsonplaceholder.typicode.com/users');
-        const data = await res.json();
-        setUsers(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
+      const res = await fetch('https://jsonplaceholder.typicode.com/users');
+      const data = await res.json();
+      setUsers(data);
     }
     fetchUsers();
   }, []);
 
   return (
-    <div>
+    <div className="section">
       <h3>User API Data</h3>
       <ul>
-        {users.map(user => <li key={user.id}>{user.name}</li>)}
+        {users.map(user => (
+          <li key={user.id}>{user.name}</li>
+        ))}
       </ul>
     </div>
   );
